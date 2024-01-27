@@ -1,0 +1,45 @@
+print('Welcome to the University of Hyperiondev’s Website')
+
+# Ask user's input
+name = input("What is your name? ").capitalize()
+age = int(input(f"And how old are you, {name}? "))
+
+# Different age possibilities
+if 16 < age <= 20:
+    print(f'You are {age}? That is wonderful! I can still vividly recall the days when I was your age—such amusing times!')
+
+elif 21 <= age < 25:
+    print(f'{age}? Awesome! You are at the perfect age to explore and enjoy university life.')
+
+elif age >= 25:
+    print(f'Welcome to Hyperion! It is great to have more experienced students join us.')
+
+else:
+    print(f'You are too young to be here, {name}. I hope to see you in some years. Goodbye')
+    exit()
+
+
+# Sports or Arts preferences
+sports_arts = input('We have some great sports and arts activities and clubs in the campus. \nAre you interested in practicing sports or participating in arts activities? Yes/No ').capitalize()
+while sports_arts != 'Yes' and sports_arts != 'No':
+    print('Answer not valid.')
+    sports_arts = input('Are you interested in practicing sports or participating in arts activities? Yes/No ').capitalize()
+if sports_arts == "No":
+    print("I'm sure you can find plenty alternatives just outside the campus.\nFor more information on what to do around this area please visit www.area.co.uk. \nHope you enjoy your journey with us.")
+    exit()
+
+if sports_arts == 'Yes':
+    preference = input('Do you prefer sports or arts? ').capitalize()
+    while preference != 'Sports' and preference != 'Arts':
+        print("We only have sports and arts activities.")
+        preference = input('Do you prefer sports or arts? ').capitalize()
+
+    if preference == 'Sports':
+        print("We have football, basketball, volleyball, and swimming groups and classes at our university.")
+        print("Follow the link below to learn more about it.\nsportsoncampus.co.uk")
+
+    else:
+        print("We have sculpture, theatre, painting, and poetry clubs.")
+        print("Check the link below to learn more.\nartsoncampus.co.uk")
+
+print(f'I hope you enjoy your journey with us {name}. Have a great day.')
