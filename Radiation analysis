@@ -1,0 +1,36 @@
+import statistics
+
+location = {"city centre":[22, 19, 20, 31, 28],
+            "industrial zone":[35, 32, 30, 37, 40],
+            "residential district":[15, 12, 18, 20, 14],
+            "rural outskirts":[9, 13, 16, 14, 7],
+            "downtown":[25, 18, 22, 21, 26]}
+
+
+for areas, values in location.items():
+    average = sum(values) / len(values)
+    standard_deviation = statistics.stdev(values)
+    print(f"The average radiation level in {areas} is {average} and the standard deviation is {standard_deviation}.")
+
+more_values = input("Do you want to add more values? Yes/No ").capitalize()
+
+
+while more_values == "Yes":
+      
+    area_new_value = input("Where have you detected the value? \ncity centre\nindustrial zone\nresidential district\nrural outskirts\ndowntown. ")
+    new_value = int(input("What radiation value do you want to add to our calculation? "))
+
+    if area_new_value in location:
+        location[area_new_value].append(new_value)
+
+    for areas, values in location.items():
+        average = sum(values) / len(values)
+        standard_deviation = statistics.stdev(values)
+        print(f"The average radiation level in {areas} is {average} and the standard deviation is {standard_deviation}.")
+
+
+    more_values = input("Do you want to add more values? Yes/No ").capitalize()
+
+
+else:
+     print("Bye bye")
